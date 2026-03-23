@@ -73,9 +73,7 @@ PORT=3000
 MONGODB_URI=mongodb://localhost:27017/banking
 JWT_SECRET=your_jwt_secret_key
 EMAIL_USER=your_email@gmail.com
-CLIENT_ID=your_google_client_id
-CLIENT_SECRET=your_google_client_secret
-REFRESH_TOKEN=your_google_refresh_token
+EMAIL_PASS=xxxxxxxxxxxxxxxx
 ```
 
 ## API Endpoints
