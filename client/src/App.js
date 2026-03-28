@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
-const BASE_URL_DEFAULT = 'http://localhost:3000';
+const BASE_URL_DEFAULT = process.env.REACT_APP_API_URL || 'http://localhost:3001' || 'http://server:3000';
 
 const ENDPOINTS = [
   {

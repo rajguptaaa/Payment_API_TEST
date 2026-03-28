@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    container_name: banking_api_server
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./server:/app
+      - server_node_modules:/app/node_modules
+    networks:
+      - banking_network
+
+  client:
+    build: ./client
+    container_name: banking_api_client
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3001
+    volumes:
+      - ./client:/app
+      - client_node_modules:/app/node_modules
+    depends_on:
+      - server
+    networks:
+      - banking_network
+
+networks:
+  banking_network:
+    driver: bridge
+
+volumes:
+  client_node_modules:
+  server_node_modules:

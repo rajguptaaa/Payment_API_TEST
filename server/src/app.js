@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000' || 'http://client:3000', credentials: true }));
 
 app.use("/api/auth", authRouter);
 app.use("/api/account", accountRouter);
